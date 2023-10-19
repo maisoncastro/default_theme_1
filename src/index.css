@@ -150,6 +150,16 @@ h1 {
   border-bottom-left-radius: 12px;
 }
 
+.rfm-marquee {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.rfm-marquee span {
+  margin-right: 2rem;
+}
+
 /* Responsiveness */
 
 @media screen and (min-width: 1440px) {

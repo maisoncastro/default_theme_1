@@ -1,3 +1,5 @@
+import Marquee from "react-fast-marquee";
+
 function Hero() {
   return (
     <>
@@ -20,9 +22,13 @@ function Hero() {
             </div>
           </div>
           <div className="hero-banner">
-            <span>
-              +++ DIGITAL AGENCY BASED IN BERLIN +++ WEB DESIGN +++ BRANDING +++
-            </span>
+            <Marquee className="marquee" loop={0} autoFill={true}>
+              <span>+++</span>
+              <span>DIGITAL AGENCY BASED IN MONTREAL</span>
+              <span>WEB DEVELOPMENT</span>
+              <span>UX/UI DESIGN</span>
+              <span>BRANDING</span>
+            </Marquee>
           </div>
         </div>
       </div>
