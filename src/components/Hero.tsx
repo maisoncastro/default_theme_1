@@ -19,6 +19,11 @@ function Hero() {
               <img className="hero-image" src="/placeholder-gradient.jpg/" />
             </div>
           </div>
+          <div className="hero-banner">
+            <span>
+              +++ DIGITAL AGENCY BASED IN BERLIN +++ WEB DESIGN +++ BRANDING +++
+            </span>
+          </div>
         </div>
       </div>
     </>
