@@ -12,7 +12,7 @@ body {
 
 .main_container {
   max-width: 117.5rem;
-  min-height: 93vh;
+  min-height: 95vh;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
@@ -30,11 +30,21 @@ body {
 .img-logo {
   height: auto;
   width: 200px;
+
+  align-self: center;
+  justify-self: start;
 }
 
 /* Button */
 .button {
   text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #3c3c3c;
+  background-color: #d7fa88;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Navbar */
@@ -45,6 +55,7 @@ body {
 
 .navbar-container {
   width: 100%;
+  display: grid;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   grid-template-rows: auto;
@@ -52,11 +63,27 @@ body {
   grid-auto-columns: 1fr;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-center {
   display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-column-gap: 2rem;
 }
 
 .navbar-menu-item {
+  align-items: center;
   text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-right {
+  align-self: center;
+  justify-self: end;
+}
+
+.navbar span {
+  font-size: 20px;
 }
 
 /* Responsiveness */
