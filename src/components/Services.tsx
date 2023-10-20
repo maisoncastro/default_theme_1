@@ -31,8 +31,8 @@ function Services() {
             <div className="services-grid-left">
               <h4>What we offer</h4>
               <h2>
-                Your Next
-                <br /> Creative Leap.
+                Your next
+                <br /> creative leap.
               </h2>
               <div className="description">
                 Embark on a transformative journey with our blend of creativity
