@@ -9,7 +9,6 @@
 body {
   height: 90vh;
   margin: 0;
-  padding: 0;
   background-color: #f6f6f6;
   font-family: "Hanken Grotesk", "serif";
   color: #f6f6f6;
@@ -334,6 +333,8 @@ h4 {
 .main-container-contact-us {
   padding-top: 4rem;
   padding-bottom: 3rem;
+
+  margin-bottom: 1.5rem;
 }
 
 .contact-us {
@@ -361,10 +362,6 @@ h4 {
   align-items: flex-end;
 
   width: 100%;
-}
-
-.contact-us-content h2 {
-  /* font-weight: 400; */
 }
 
 /* Responsiveness */
