@@ -13,7 +13,7 @@ function NavBar() {
 
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 1 } },
+    visible: { y: 0, opacity: 1, transition: { duration: 2 } },
   };
 
   return (
@@ -26,9 +26,9 @@ function NavBar() {
             initial="hidden"
             animate="visible"
           >
-            <div className="nav-left">
+            <motion.div variants={itemVariants} className="nav-left">
               <img className="img-logo" src="./logo_white.svg" />
-            </div>
+            </motion.div>
             <motion.div className="nav-center" variants={itemVariants}>
               <span className="navbar-menu-item">About</span>
               <span className="navbar-menu-item">Services</span>
