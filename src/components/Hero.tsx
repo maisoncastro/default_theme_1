@@ -39,9 +39,9 @@ function Hero() {
           </motion.div>
           <motion.div
             className="hero-image-container"
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 3 }}
           >
             <div className="hero-image-wrapper">
               <img className="hero-image" src="/placeholder-gradient.jpg/" />
