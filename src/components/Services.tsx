@@ -1,4 +1,29 @@
+// import { useEffect, useRef } from "react";
+
 function Services() {
+  // const rightGridRef = useRef(null);
+
+  // useEffect(() => {
+  //   const rightGridElement = rightGridRef.current;
+  //   const cards = Array.from(
+  //     rightGridElement.getElementsByClassName("services-card")
+  //   );
+
+  //   const handleScroll = () => {
+  //     cards.forEach((card, index) => {
+  //       const cardPosition = card.getBoundingClientRect().top;
+  //       if (cardPosition < window.innerHeight / 2) {
+  //         card.classList.add("stacked");
+  //       } else {
+  //         card.classList.remove("stacked");
+  //       }
+  //     });
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
   const services = [
     {
       id: 1,
@@ -29,19 +54,24 @@ function Services() {
         <div className="main-services-container">
           <div className="services-grid">
             <div className="services-grid-left">
-              <h4>What we offer</h4>
-              <h2>
-                Your next
-                <br /> creative leap.
-              </h2>
-              <div className="description">
-                Embark on a transformative journey with our blend of creativity
-                and technical expertise, nurturing your next innovation. We
-                redefine the achievable, crafting digital experiences that
-                engage your audience and drive growth.
+              <div className="services-grid-left-content">
+                <h4>What we offer</h4>
+                <h2>
+                  Your next
+                  <br /> creative leap.
+                </h2>
+                <div className="description">
+                  Embark on a transformative journey with our blend of
+                  creativity and technical expertise, nurturing your next
+                  innovation. We redefine the achievable, crafting digital
+                  experiences that engage your audience and drive growth.
+                </div>
               </div>
             </div>
-            <div className="services-grid-right">
+            <div
+              className="services-grid-right"
+              // ref={rightGridRef}
+            >
               {services.map((service) => (
                 <div className="services-card">
                   <div key={service.id} className="service-item">

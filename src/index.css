@@ -273,13 +273,15 @@ h4 {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+}
 
-  overflow-y: auto;
+.services-grid-left-content {
+  position: sticky;
+  top: 3rem;
 }
 
 .services-grid-left h2 {
   padding-top: 1rem;
-  position: sticky;
 }
 
 .services-grid-left .description {
@@ -299,6 +301,18 @@ h4 {
   background-color: #d7fa88;
 
   border-radius: 8px;
+
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1; /* start with a z-index of 1 */
+}
+
+.stacked {
+  transform: translateY(
+    -50%
+  ); /* adjust this value to control the stacking amount */
+  z-index: 2; /* increased z-index to ensure it stacks on top */
 }
 
 .service-item {
