@@ -9,17 +9,17 @@ function Projects() {
     },
     {
       id: 2,
-      image: "src/assets/projects/trifecta.jpg",
+      image: "src/assets/projects/soliditas.png",
       title: "Soliditas",
       description: "Construction Company UI Mockup",
       stack: ["Figma", "Photoshop"],
     },
     {
       id: 3,
-      image: "src/assets/projects/trifecta.jpg",
+      image: "src/assets/projects/stealthsquad.png",
       title: "Stealth Squad",
       description: "Password Generator",
-      stack: ["Vite", "Tailwind CSS"],
+      stack: ["Vite", "Tailwind CSS", "Vercel"],
     },
   ];
 
@@ -43,7 +43,11 @@ function Projects() {
                     <h4>{project.description}</h4>
                   </div>
                   <div className="project-item-bottom">
-                    <span className="stack-wrapper">{project.stack}</span>
+                    {project.stack.map((tech) => (
+                      <span className="stack-wrapper" key={tech}>
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
