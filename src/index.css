@@ -187,6 +187,20 @@ h4 {
   font-weight: 500;
 }
 
+.navbar-menu-item {
+  border-radius: 5px;
+  padding: 1rem;
+  transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out;
+  /* border-radius 0.3s ease-in-out; */
+}
+
+.navbar-menu-item:hover {
+  background-color: #d7fa88;
+  color: #3c3c3c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* Hero Section */
 
 .main-hero-container {
