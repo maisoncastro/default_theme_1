@@ -13,7 +13,9 @@ function ContactCard() {
                   <br /> next standout project?
                 </h2>
               </div>
-              <span className="button">Get In Touch</span>
+              <div className="button">
+                <div className="button-text">Contact</div>
+              </div>
             </div>
           </div>
         </div>

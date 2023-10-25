@@ -13,7 +13,9 @@ function NavBar() {
               <span className="navbar-menu-item">Projects</span>
             </div>
             <div className="nav-right">
-              <span className="button">Contact</span>
+              <div className="button">
+                <div className="button-text">Contact</div>
+              </div>
             </div>
           </div>
         </div>
