@@ -30,11 +30,11 @@ function Hero() {
             <motion.h1 variants={itemVariants}>
               Crafting Digital Excellence,
               <br />
-              One Pixel at a Time
+              One Pixel at a Time.
             </motion.h1>
             <motion.span className="hero-subtitle" variants={itemVariants}>
               Unveiling a New Realm of Online Engagement Through Custom-Crafted
-              Web Designs
+              Web Designs.
             </motion.span>
           </motion.div>
           <motion.div
