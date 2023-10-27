@@ -14,7 +14,9 @@ function ContactCard() {
                 </h2>
               </div>
               <div className="button">
-                <div className="button-text">Contact</div>
+                <div className="button-text">
+                  <a href="mailto:nazimsesen@gmail.com">Contact</a>
+                </div>
               </div>
             </div>
           </div>

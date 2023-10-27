@@ -31,6 +31,11 @@ body {
   padding-right: 2rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   font-family: "Bitter", "serif";
   font-size: 7rem;
@@ -119,8 +124,8 @@ h4 {
 }
 
 .contact-us-bottom .button {
-  background-color: #3c3c3c;
-  color: #d7fa88;
+  background-color: #3c3c3c !important;
+  color: #d7fa88 !important;
   border: none;
   padding: 0.8rem 1.5rem;
   font-weight: 500;
@@ -133,14 +138,14 @@ h4 {
 }
 
 .contact-us-bottom .button::after {
-  color: #d7fa88;
+  color: #d7fa88 !important;
   content: "Let's Talk";
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #3c3c3c;
+  background-color: #3c3c3c !important;
   display: flex;
   align-items: center;
   justify-content: center;
