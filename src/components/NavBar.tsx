@@ -82,8 +82,10 @@ function NavBar() {
             </div>
 
             <motion.div className="nav-right" variants={itemVariants}>
-              <div className="button">
-                <div className="button-text">Contact</div>
+              <div className="button-text">
+                <a href="mailto:nazimsesen@gmail.com" target="_blank">
+                  <div className="button">Contact</div>
+                </a>
               </div>
             </motion.div>
           </motion.div>

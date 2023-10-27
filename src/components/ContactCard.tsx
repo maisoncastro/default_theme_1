@@ -13,10 +13,10 @@ function ContactCard() {
                   <br /> next standout project?
                 </h2>
               </div>
-              <div className="button">
-                <div className="button-text">
-                  <a href="mailto:nazimsesen@gmail.com">Contact</a>
-                </div>
+              <div className="button-text">
+                <a href="mailto:nazimsesen@gmail.com" target="_blank">
+                  <div className="button">Contact</div>
+                </a>
               </div>
             </div>
           </div>
