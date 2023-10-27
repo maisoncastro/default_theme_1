@@ -34,7 +34,7 @@ function Projects() {
           <h4>Featured Projects</h4>
           <div className="projects-section">
             {projects.map((project) => (
-              <div className="project-card">
+              <div key={project.id} className="project-card">
                 <div key={project.id} className="project-item">
                   <div className="project-image-overlay"></div>
                   <img

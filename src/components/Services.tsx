@@ -73,7 +73,7 @@ function Services() {
               // ref={rightGridRef}
             >
               {services.map((service) => (
-                <div className="services-card">
+                <div key={service.id} className="services-card">
                   <div key={service.id} className="service-item">
                     <img src={service.icon} />
                     <h3>{service.title}</h3>
