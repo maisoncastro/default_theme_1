@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Menu } from "@headlessui/react";
 
 function NavBar() {
   const containerVariants = {
@@ -29,11 +30,57 @@ function NavBar() {
             <motion.div variants={itemVariants} className="nav-left">
               <img className="img-logo" src="./logo_white.svg" />
             </motion.div>
-            <motion.div className="nav-center" variants={itemVariants}>
+
+            {/* Desktop Menu */}
+            <motion.div
+              className="nav-center desktop-menu"
+              variants={itemVariants}
+            >
               <span className="navbar-menu-item">About</span>
               <span className="navbar-menu-item">Services</span>
               <span className="navbar-menu-item">Projects</span>
             </motion.div>
+
+            {/* Mobile Menu */}
+            <div className="hamburger-container mobile-menu">
+              <Menu>
+                {({ open }) => (
+                  <>
+                    <Menu.Button className="menu-button">☰</Menu.Button>
+                    <Menu.Items className={`menu-items ${open ? "open" : ""}`}>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <span
+                            className={`menu-item ${active ? "active" : ""}`}
+                          >
+                            About
+                          </span>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <span
+                            className={`menu-item ${active ? "active" : ""}`}
+                          >
+                            Services
+                          </span>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <span
+                            className={`menu-item ${active ? "active" : ""}`}
+                          >
+                            Projects
+                          </span>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </>
+                )}
+              </Menu>
+            </div>
+
             <motion.div className="nav-right" variants={itemVariants}>
               <div className="button">
                 <div className="button-text">Contact</div>
