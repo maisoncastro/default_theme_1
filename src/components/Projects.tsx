@@ -1,22 +1,26 @@
+import trifectaImage from "../assets/projects/trifecta.jpg";
+import soliditasImage from "../assets/projects/soliditas.png";
+import stealthsquadImage from "../assets/projects/stealthsquad.png";
+
 function Projects() {
   const projects = [
     {
       id: 1,
-      image: "src/assets/projects/trifecta.jpg",
+      image: trifectaImage,
       title: "Trifecta Weight Management",
       description: "Holistic Approach to Weight Management",
       stack: ["WordPress"],
     },
     {
       id: 2,
-      image: "src/assets/projects/soliditas.png",
+      image: soliditasImage,
       title: "Soliditas",
       description: "Construction Company UI Mockup",
       stack: ["Figma", "Photoshop"],
     },
     {
       id: 3,
-      image: "src/assets/projects/stealthsquad.png",
+      image: stealthsquadImage,
       title: "Stealth Squad",
       description: "Password Generator",
       stack: ["Vite", "Tailwind CSS", "Vercel"],
