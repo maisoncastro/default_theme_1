@@ -10,6 +10,7 @@ function Projects() {
       title: "Trifecta Weight Management",
       description: "Holistic Approach to Weight Management",
       stack: ["WordPress"],
+      URL: "https://trifectaweightmanagement.com/",
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ function Projects() {
       title: "Soliditas",
       description: "Construction Company UI Mockup",
       stack: ["Figma", "Photoshop"],
+      URL: "https://www.behance.net/gallery/181644131/SOLIDITAS-Construction-Company",
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ function Projects() {
       title: "Stealth Squad",
       description: "Password Generator",
       stack: ["Vite", "Tailwind CSS", "Vercel"],
+      URL: "https://stealth-squad.vercel.app/",
     },
   ];
 
@@ -33,6 +36,7 @@ function Projects() {
         <div className="main-projects-container">
           <h4>Featured Projects</h4>
           <div className="projects-section">
+            <div className="cursor">View</div>
             {projects.map((project) => (
               <div key={project.id} className="project-card">
                 <div key={project.id} className="project-item">
