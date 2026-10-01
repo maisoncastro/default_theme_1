@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T19:42:52.341131Z",
+  "title": "Design System: Default_1",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Lime"
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Lime Hover"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Dark Surface"
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Surface"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Off-white"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Gray"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink"
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Dark Ink Hover"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divider"
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Outer Canvas"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Two-line hero heading; mobile and tablet size overrides are documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Base section headings, with about/contact overrides."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service headings, with project-title size overrides."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraph family and line-height; size varies by component."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Base primary-button label, with compact and mobile overrides."
+      }
+    },
+    "shadows": [
+      {
+        "name": "preview-lift",
+        "value": "0 20px 48px rgb(12 15 10 / 0.3)",
+        "purpose": "Both overlapping hero previews."
+      },
+      {
+        "name": "navigation-lift",
+        "value": "0 18px 36px rgb(12 15 10 / 0.35)",
+        "purpose": "Mobile navigation disclosure."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Transform feedback and hero entrance."
+      },
+      {
+        "name": "button-feedback",
+        "value": "background-color 180ms ease, transform 160ms var(--ease-out)",
+        "purpose": "Buttons and copy control; pressed scale is 0.97."
+      },
+      {
+        "name": "navigation-feedback",
+        "value": "color 180ms ease; transform 180ms var(--ease-out)",
+        "purpose": "Navigation text and underline."
+      },
+      {
+        "name": "text-link-arrow",
+        "value": "transform 200ms var(--ease-out)",
+        "purpose": "Pointer hover shifts the arrow by 2px right and up."
+      },
+      {
+        "name": "hero-preview-hover",
+        "value": "transform 300ms var(--ease-out)",
+        "purpose": "Pointer hover straightens and lifts a preview by 5px."
+      },
+      {
+        "name": "project-image-hover",
+        "value": "transform 500ms var(--ease-out)",
+        "purpose": "Pointer hover scales project media to 1.035."
+      },
+      {
+        "name": "project-arrow-hover",
+        "value": "transform 250ms var(--ease-out)",
+        "purpose": "Pointer hover rotates the opening arrow 45 degrees."
+      },
+      {
+        "name": "hero-copy-entrance",
+        "value": "hero-enter 600ms var(--ease-out) both",
+        "purpose": "Opacity 0.65 to 1 and vertical translation 18px to 0, when motion is allowed."
+      },
+      {
+        "name": "hero-work-entrance",
+        "value": "work-enter 750ms 90ms var(--ease-out) both",
+        "purpose": "Opacity 0.7 to 1 and vertical translation 24px to 0, when motion is allowed."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none !important; transition: none !important; scroll-behavior: auto",
+        "purpose": "Applied under prefers-reduced-motion: reduce. Hover transforms remain immediate."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-max",
+        "value": "359px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      },
+      {
+        "name": "desktop-min",
+        "value": "768px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hero project action with lime fill and a downward diagonal arrow.",
+      "html": "<a class=\"ds-primary\" href=\"#projects\">View projects <svg width=\"22\" height=\"22\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M200,88V192a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h84.69L58.34,69.66A8,8,0,0,1,69.66,58.34L184,172.69V88a8,8,0,0,1,16,0Z\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:32px;min-height:56px;padding:16px 24px;background:var(--accent,#d7fa88);color:var(--ink,#20221f);border:1px solid transparent;border-radius:var(--radius-small,8px);font-family:\"Hanken Grotesk Variable\",sans-serif;font-size:16px;font-weight:600;white-space:nowrap;text-decoration:none;transition:background-color 180ms ease,transform 160ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-primary:focus-visible{outline:2px solid var(--accent,#d7fa88);outline-offset:6px;border-radius:3px;}.ds-primary:active{transform:scale(0.97);}@media(hover:hover) and (pointer:fine){.ds-primary:hover{background:#e3ffac;}}@media(max-width:767px){.ds-primary{padding:15px 20px;min-height:52px;gap:20px;font-size:15px;}}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none!important;}}"
+    },
+    {
+      "name": "Compact header action",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Compact contact action displayed in the desktop header.",
+      "html": "<a class=\"ds-small\" href=\"#contact\">Contact <svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"/></svg></a>",
+      "css": ".ds-small{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:44px;padding:10px 17px;background:var(--accent,#d7fa88);color:var(--ink,#20221f);border:1px solid transparent;border-radius:var(--radius-small,8px);font-family:\"Hanken Grotesk Variable\",sans-serif;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;transition:background-color 180ms ease,transform 160ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-small:focus-visible{outline:2px solid var(--accent,#d7fa88);outline-offset:6px;border-radius:3px;}.ds-small:active{transform:scale(0.97);}@media(hover:hover) and (pointer:fine){.ds-small:hover{background:#e3ffac;}}@media(prefers-reduced-motion:reduce){.ds-small,.ds-small svg{transition:none!important;}}"
+    },
+    {
+      "name": "Dark contact action",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Dark action placed on the lime contact panel; use the panel preview to see its intended context.",
+      "html": "<a class=\"ds-dark\" href=\"mailto:nazimsesen@gmail.com\">Contact <svg width=\"22\" height=\"22\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"/></svg></a>",
+      "css": ".ds-dark{display:inline-flex;align-items:center;justify-content:center;gap:32px;min-height:56px;padding:16px 24px;background:var(--ink,#20221f);color:var(--accent,#d7fa88);border:1px solid transparent;border-radius:var(--radius-small,8px);font-family:\"Hanken Grotesk Variable\",sans-serif;font-size:16px;font-weight:600;white-space:nowrap;text-decoration:none;transition:background-color 180ms ease,transform 160ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-dark{min-width:182px;}.ds-dark:focus-visible{outline:2px solid var(--ink,#20221f);outline-offset:6px;border-radius:3px;}.ds-dark:active{transform:scale(0.97);}@media(hover:hover) and (pointer:fine){.ds-dark:hover{background:#34392c;}}@media(max-width:767px){.ds-dark{padding:15px 20px;min-height:52px;gap:20px;font-size:15px;width:100%;}}@media(prefers-reduced-motion:reduce){.ds-dark,.ds-dark svg{transition:none!important;}}"
+    },
+    {
+      "name": "Text link",
+      "kind": "button",
+      "description": "Underlined contact link with pointer-hover arrow movement.",
+      "html": "<a class=\"ds-text-link\" href=\"#contact\">Contact <svg width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:var(--text,#f3f4ed);font-family:\"Hanken Grotesk Variable\",sans-serif;font-weight:500;font-size:16px;text-decoration:underline;text-decoration-color:var(--line,#44483e);text-underline-offset:7px;transition:text-decoration-color 180ms ease;}.ds-text-link svg{transition:transform 200ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-text-link:focus-visible{outline:2px solid var(--accent,#d7fa88);outline-offset:6px;border-radius:3px;}@media(hover:hover) and (pointer:fine){.ds-text-link:hover{text-decoration-color:currentColor;}.ds-text-link:hover svg{transform:translate(2px,-2px);}}@media(prefers-reduced-motion:reduce){.ds-text-link,.ds-text-link svg{transition:none!important;}}"
+    },
+    {
+      "name": "Desktop navigation links",
+      "kind": "nav",
+      "description": "Muted section links with lime underlines for pointer hover and the current location. Mobile disclosure behavior is documented in DESIGN.md.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#about\" aria-current=\"location\">About</a><a href=\"#services\">Services</a><a href=\"#projects\">Projects</a></nav>",
+      "css": ".ds-nav{display:flex;gap:32px;align-items:center;font-family:\"Hanken Grotesk Variable\",sans-serif;}.ds-nav a{position:relative;padding-block:16px;color:var(--muted,#b6bab0);font-size:15px;text-decoration:none;transition:color 180ms ease;}.ds-nav a::after{position:absolute;content:\"\";bottom:6px;left:0;right:0;height:2px;background:var(--accent,#d7fa88);transform:scaleX(0);transform-origin:left;transition:transform 180ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-nav a[aria-current]{color:var(--text,#f3f4ed);}.ds-nav a[aria-current]::after{transform:scaleX(1);}.ds-nav a:focus-visible{outline:2px solid var(--accent,#d7fa88);outline-offset:6px;border-radius:3px;}@media(hover:hover) and (pointer:fine){.ds-nav a:hover{color:var(--text,#f3f4ed);}.ds-nav a:hover::after{transform:scaleX(1);}}@media(prefers-reduced-motion:reduce){.ds-nav a,.ds-nav a::after{transition:none!important;}}"
+    },
+    {
+      "name": "Project tool tag",
+      "kind": "chip",
+      "refersTo": "tool-tag",
+      "description": "A static tool label below a project caption, with no selection or interaction state.",
+      "html": "<span class=\"ds-tool-tag\">WordPress</span>",
+      "css": ".ds-tool-tag{display:inline-block;font-family:\"Hanken Grotesk Variable\",sans-serif;font-size:12px;padding:5px 10px;border:1px solid var(--line,#44483e);border-radius:5px;color:var(--muted,#b6bab0);}"
+    },
+    {
+      "name": "Email copy control",
+      "kind": "button",
+      "description": "Default copy-control appearance from the lime contact surface. Clipboard feedback is handled by the React implementation.",
+      "html": "<button class=\"ds-copy\" type=\"button\" aria-label=\"Copy email address\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z\"/></svg></button>",
+      "css": ".ds-copy{display:grid;place-items:center;width:44px;min-width:44px;height:44px;border:1px solid #7b954c;border-radius:var(--radius-small,8px);color:var(--ink,#20221f);background:transparent;cursor:pointer;transition:background-color 180ms ease,transform 160ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-copy:focus-visible{outline:2px solid var(--ink,#20221f);outline-offset:6px;border-radius:3px;}.ds-copy:active{transform:scale(0.97);}@media(hover:hover) and (pointer:fine){.ds-copy:hover{background:#c4e477;}}@media(prefers-reduced-motion:reduce){.ds-copy,.ds-copy svg{transition:none!important;}}"
+    },
+    {
+      "name": "Contact panel",
+      "kind": "card",
+      "refersTo": "contact-panel",
+      "description": "Lime surface, contrasting headline, underlined mail address, and dark contact action. The existing logo and copy-control behavior belong to the application.",
+      "html": "<section class=\"ds-contact\"><h2>Ready for your next<br><span>standout project?</span></h2><div class=\"ds-contact-bottom\"><div><p>Tell us what you have in mind.</p><a class=\"ds-email\" href=\"mailto:nazimsesen@gmail.com\">nazimsesen@gmail.com</a></div><a class=\"ds-dark\" href=\"mailto:nazimsesen@gmail.com\">Contact <svg width=\"22\" height=\"22\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"/></svg></a></div></section>",
+      "css": ".ds-contact{background:var(--accent,#d7fa88);color:var(--ink,#20221f);border-radius:var(--radius,14px);padding:clamp(28px,5vw,72px);font-family:\"Hanken Grotesk Variable\",sans-serif;}.ds-contact h2{margin:0;font-family:\"Manrope Variable\",sans-serif;font-weight:500;letter-spacing:-0.04em;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.12;text-wrap:balance;max-width:1000px;}.ds-contact h2 span{color:#4b6128;}.ds-contact-bottom{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:48px;}.ds-contact p{margin:0;line-height:1.6;font-size:17px;}.ds-email{display:inline-block;margin-top:12px;color:inherit;font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:500;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;}.ds-email:focus-visible{outline:2px solid var(--ink,#20221f);outline-offset:6px;border-radius:3px;}.ds-dark{display:inline-flex;align-items:center;justify-content:center;gap:32px;min-height:56px;padding:16px 24px;background:var(--ink,#20221f);color:var(--accent,#d7fa88);border:1px solid transparent;border-radius:var(--radius-small,8px);font-family:\"Hanken Grotesk Variable\",sans-serif;font-size:16px;font-weight:600;white-space:nowrap;text-decoration:none;transition:background-color 180ms ease,transform 160ms var(--ease-out,cubic-bezier(0.22,1,0.36,1));}.ds-dark{min-width:182px;}.ds-dark:focus-visible{outline:2px solid var(--ink,#20221f);outline-offset:6px;border-radius:3px;}.ds-dark:active{transform:scale(0.97);}@media(hover:hover) and (pointer:fine){.ds-dark:hover{background:#34392c;}}@media(max-width:767px){.ds-dark{padding:15px 20px;min-height:52px;gap:20px;font-size:15px;width:100%;}}@media(prefers-reduced-motion:reduce){.ds-dark,.ds-dark svg{transition:none!important;}}@media(max-width:767px){.ds-contact{padding:28px;}.ds-contact h2{font-size:clamp(2rem,8vw,3.4rem);}.ds-contact h2 br{display:none;}.ds-contact h2 span{display:block;}.ds-contact-bottom{flex-direction:column;align-items:start;gap:24px;margin-top:28px;}.ds-contact p{font-size:16px;}.ds-email{font-size:clamp(0.94rem,4.2vw,1.4rem);overflow-wrap:anywhere;}}@media(max-width:359px){.ds-contact{padding:22px;}}"
+    }
+  ],
+  "narrative": {
+    "overview": "The implemented portfolio retains the existing wordmark and dark/lime identity. Large, lightly weighted headings sit beside project imagery; supporting text, thin dividers, and open service rows keep the remaining content quieter. Lime emphasizes actions, selected details, and the contact surface.\n\nThe overlapping hero previews supply the main depth and motion signature. Other sections use flat surfaces, generous vertical spacing, and captions below images. This document records the current implementation in `src/index.css` and `src/components`.",
+    "keyCharacteristics": [
+      "Dark surfaces with warm off-white text and lime emphasis.",
+      "Manrope headings paired with Hanken Grotesk body and interface text.",
+      "Open service rows, image-led projects, and a lime contact panel.",
+      "Short interaction feedback with reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Reduced Motion Rule",
+        "body": "Under `prefers-reduced-motion: reduce`, animations and transitions are disabled and anchor scrolling becomes immediate. Otherwise, hero copy enters over 600ms and previews over 750ms after a 90ms delay; hover effects are restricted to fine pointers that support hover.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "**Do** reuse the existing wordmark, font pairing, lime accent, and dark surfaces.",
+      "**Do** keep project captions outside images and preserve readable image framing.",
+      "**Do** preserve visible keyboard focus, native links, and reduced-motion behavior."
+    ],
+    "donts": [
+      "**Don't** apply project-image background colors as additional global accents.",
+      "**Don't** introduce selected or filter behavior for the existing tool tags.",
+      "**Don't** add motion that bypasses the reduced-motion treatment."
+    ]
+  }
+}

@@ -1,91 +1,29 @@
-// import { useEffect, useRef } from "react";
+import { ArrowUpRight, Browsers, Code, PenNib } from "@phosphor-icons/react";
+
+const services = [
+  { title: "Web Development", icon: Code, description: "Websites built to work beautifully. From development and hosting to content management and domains, we bring the whole experience together.", details: ["Custom websites", "Content management", "Hosting & domains"] },
+  { title: "UX/UI Design", icon: Browsers, description: "Clear journeys. Considered interfaces. We turn complex ideas into intuitive experiences, from the first wireframe to the final interactive prototype.", details: ["User experience", "Interface design", "Interactive prototypes"] },
+  { title: "Branding", icon: PenNib, description: "A distinct identity, wherever your brand shows up. Logos, visual systems, and guidelines that give every touchpoint a consistent point of view.", details: ["Visual identity", "Logo design", "Brand guidelines"] },
+];
 
 function Services() {
-  // const rightGridRef = useRef(null);
-
-  // useEffect(() => {
-  //   const rightGridElement = rightGridRef.current;
-  //   const cards = Array.from(
-  //     rightGridElement.getElementsByClassName("services-card")
-  //   );
-
-  //   const handleScroll = () => {
-  //     cards.forEach((card, index) => {
-  //       const cardPosition = card.getBoundingClientRect().top;
-  //       if (cardPosition < window.innerHeight / 2) {
-  //         card.classList.add("stacked");
-  //       } else {
-  //         card.classList.remove("stacked");
-  //       }
-  //     });
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-  const services = [
-    {
-      id: 1,
-      icon: "/icon-2.svg/",
-      title: "Web Development",
-      description:
-        "Navigate the digital realm with ease through our comprehensive web development services. We offer reliable hosting solutions, intuitive Content Management Systems (CMS) to empower you with control over your content, and domain management to establish your unique online identity. Our seamless service ensures your website remains accessible, manageable, and distinctive.",
-    },
-    {
-      id: 2,
-      icon: "/icon-1.svg/",
-      title: "UX/UI Design",
-      description:
-        "Transform your ideas into intuitive and visually compelling digital experiences with our UX/UI Design services. We focus on creating user-centric designs that are not only aesthetically pleasing but also enhance usability and user satisfaction. From wireframes to interactive prototypes, we ensure every design element resonates with your brand while providing a seamless user journey across all digital touchpoints.",
-    },
-    {
-      id: 3,
-      icon: "/icon-3.svg/",
-      title: "Branding",
-      description:
-        "Carve out a distinct identity in the digital landscape with our branding services. We meticulously craft a coherent and resonant brand narrative that sets you apart from the competition. From logo design to brand guidelines, we ensure consistency across all touchpoints to build a recognizable and trustworthy brand persona. Engage and connect with your audience through a brand that reflects your vision and values.",
-    },
-  ];
-
   return (
-    <>
-      <div className="page-padding">
-        <div className="main-services-container">
-          <div className="services-grid">
-            <div className="services-grid-left">
-              <div className="services-grid-left-content">
-                <h4>What we offer</h4>
-                <h2>
-                  Your next
-                  <br /> creative leap.
-                </h2>
-                <div className="description">
-                  Embark on a transformative journey with our blend of
-                  creativity and technical expertise, nurturing your next
-                  innovation. We redefine the achievable, crafting digital
-                  experiences that engage your audience and drive growth.
-                </div>
-              </div>
-            </div>
-            <div
-              className="services-grid-right"
-              // ref={rightGridRef}
-            >
-              {services.map((service) => (
-                <div key={service.id} className="services-card">
-                  <div key={service.id} className="service-item">
-                    <img src={service.icon} />
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                </div>
-              ))}{" "}
-            </div>
-          </div>
-        </div>
+    <section className="services page-padding section-space" id="services" aria-labelledby="services-title">
+      <div className="services-intro">
+        <h2 id="services-title">Your next<br />creative leap.</h2>
+        <p>Design and development, working together. One considered experience from your first idea to the final detail.</p>
+        <a className="text-link" href="#contact">Contact <ArrowUpRight size={20} aria-hidden="true" /></a>
       </div>
-    </>
+      <div className="service-list">
+        {services.map(({ title, icon: Icon, description, details }) => (
+          <article className="service" key={title}>
+            <div className="service-heading"><Icon size={30} weight="light" aria-hidden="true" /><h3>{title}</h3></div>
+            <p>{description}</p>
+            <ul className="service-details" aria-label={`${title} includes`}>{details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
