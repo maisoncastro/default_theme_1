@@ -1,97 +1,78 @@
-import { motion } from "framer-motion";
-import { Menu } from "@headlessui/react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, List, X } from "@phosphor-icons/react";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+];
 
 function NavBar() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-      },
-    },
-  };
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 2 } },
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+      }),
+      { rootMargin: "-20% 0px -55% 0px" },
+    );
+    [...links, { href: "#home" }, { href: "#contact" }].forEach(({ href }) => {
+      const section = document.querySelector(href);
+      if (section) observer.observe(section);
+    });
+    const media = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => setOpen(false);
+    media.addEventListener("change", closeOnDesktop);
+    return () => {
+      observer.disconnect();
+      media.removeEventListener("change", closeOnDesktop);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    }
+    function handleOutside(event: PointerEvent) {
+      if (!panelRef.current?.contains(event.target as Node) && !triggerRef.current?.contains(event.target as Node)) setOpen(false);
+    }
+    document.addEventListener("keydown", handleKey);
+    document.addEventListener("pointerdown", handleOutside);
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.removeEventListener("pointerdown", handleOutside);
+    };
+  }, [open]);
 
   return (
-    <>
-      <div className="page-padding">
-        <div className="navbar">
-          <motion.div
-            className="navbar-container"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div variants={itemVariants} className="nav-left">
-              <img className="img-logo" src="./logo_white.svg" />
-            </motion.div>
-
-            {/* Desktop Menu */}
-            <motion.div
-              className="nav-center desktop-menu"
-              variants={itemVariants}
-            >
-              <span className="navbar-menu-item">About</span>
-              <span className="navbar-menu-item">Services</span>
-              <span className="navbar-menu-item">Projects</span>
-            </motion.div>
-
-            {/* Mobile Menu */}
-            <div className="hamburger-container mobile-menu">
-              <Menu>
-                {({ open }) => (
-                  <>
-                    <Menu.Button className="menu-button">☰</Menu.Button>
-                    <Menu.Items className={`menu-items ${open ? "open" : ""}`}>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <span
-                            className={`menu-item ${active ? "active" : ""}`}
-                          >
-                            About
-                          </span>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <span
-                            className={`menu-item ${active ? "active" : ""}`}
-                          >
-                            Services
-                          </span>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <span
-                            className={`menu-item ${active ? "active" : ""}`}
-                          >
-                            Projects
-                          </span>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </>
-                )}
-              </Menu>
-            </div>
-
-            <motion.div className="nav-right" variants={itemVariants}>
-              <div className="button-text">
-                <a href="mailto:nazimsesen@gmail.com" target="_blank">
-                  <div className="button">Contact</div>
-                </a>
-              </div>
-            </motion.div>
-          </motion.div>
+    <header className="site-header">
+      <nav className="navbar page-padding" aria-label="Main navigation">
+        <a className="brand" href="#home" aria-label="Default_1 home" onClick={() => setOpen(false)}>
+          <img src={`${import.meta.env.BASE_URL}logo_white.svg`} alt="Default_1" width="144" height="26" />
+        </a>
+        <div className="desktop-links">
+          {links.map((link) => <a key={link.href} href={link.href} className="nav-link" aria-current={active === link.href ? "location" : undefined}>{link.label}</a>)}
         </div>
-      </div>
-    </>
+        <a className="button button-small nav-contact" href="#contact">Contact <ArrowUpRight size={18} aria-hidden="true" /></a>
+        <button ref={triggerRef} type="button" className="menu-toggle" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}>
+          {open ? <X size={24} aria-hidden="true" /> : <List size={24} aria-hidden="true" />}
+        </button>
+        <div ref={panelRef} id="mobile-navigation" className="mobile-navigation" hidden={!open} onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node) && event.relatedTarget !== triggerRef.current) setOpen(false);
+        }}>
+          {links.map((link) => <a key={link.href} href={link.href} aria-current={active === link.href ? "location" : undefined} onClick={() => setOpen(false)}>{link.label} <ArrowUpRight size={22} aria-hidden="true" /></a>)}
+          <a href="#contact" onClick={() => setOpen(false)}>Contact <ArrowUpRight size={22} aria-hidden="true" /></a>
+        </div>
+      </nav>
+    </header>
   );
 }
 
